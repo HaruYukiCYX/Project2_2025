@@ -92,7 +92,7 @@ def send_email(status, test=False):
             html_content = html_content.replace("🌱 Plant Status Report", "🌱 Plant Monitoring System - Test Email")
         else:
             message = "Water needed!" if current_status else "Moisture sufficient"
-            html_content = create_html_email(current_status, current_status)
+            html_content = create_email_html(current_status, current_status)  # Fixed this line
 
         msg = EmailMessage()
         msg.set_content(message)
